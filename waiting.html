@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Waiting Room</title>
+</head>
+<body>
+    <div id="waitingScreen" class="waitingScreen" style="display: flex;">
+        <div class="card-container">
+            <div class="card-content row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card-heading-container">
+                        <h1 class="card-heading">Waiting list</h1>
+                    </div>
+                </div>
+                <div id="playersList" class="waiting-list-container mt-4">
+                    <!-- Player names will be dynamically added here -->
+                </div>
+                <div class="mt-4 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="create-btn-container">
+                        <button id="chooseStart" class="btn btn-success">Start</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for handling waiting room updates -->
+    <script>
+        // Function to update the waiting screen with player names
+        function updateWaitingScreen(playerName) {
+            const waitingList = document.getElementById("playersList");
+            const listItem = document.createElement("span");
+            listItem.innerHTML = `<i style="color: green;" class="fas fa-circle"></i> ${playerName}<br>`;
+            waitingList.appendChild(listItem);
+        }
+
+        // Example usage: Call updateWaitingScreen with player names
+        updateWaitingScreen("Player1");
+        updateWaitingScreen("Player2");
+    </script>
+
+    <!-- Include Font Awesome for the icons -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</body>
+</html>
