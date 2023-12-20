@@ -1,0 +1,207 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* LocationCard styles */
+.location-card {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #333;
+  width: 80%;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2s forwards; /* Adjust the delay */
+}
+
+img {
+  width: 700px;
+  height: 380px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 1.5s forwards; /* Adjust the delay */
+}
+
+.answers {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2s forwards; /* Adjust the delay */
+}
+
+.card-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2s forwards; /* Adjust the delay */
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2s forwards; /* Adjust the delay */
+}
+
+.card {
+  width: 340px;
+  height: 65px;
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 8px;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2s forwards; /* Adjust the delay */
+}
+
+.card > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  border-radius: 8px;
+}
+
+.card .front {
+  background-color: black;
+  transform: rotateY(0deg);
+}
+
+.card .back {
+  background-color: black;
+  transform: rotateY(180deg);
+}
+
+.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.flipped .back {
+  transform: rotateY(0deg);
+}
+
+.mcq-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2s forwards; /* Adjust the delay */
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 50px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2s forwards; /* Adjust the delay */
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.game-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2s forwards; /* Adjust the delay */
+}
+
+.test-card {
+  flex: 2;
+  margin-right: 20px;
+  width: 80%;
+}
+
+.score-column {
+  flex: 1;
+  margin-left: 10px;
+  margin-right: 30px;
+  margin-top: 25px;
+}
+
+.score-table {
+  margin-bottom: 20px;
+  overflow-x: auto;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2s forwards; /* Adjust the delay */
+}
+
+.score-table table {
+  width: 100%;
+}
+
+.score-table th,
+.score-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-dropdown {
+  margin-bottom: 20px;
+  margin-top: 50px;
+  width: 80%;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2s forwards; /* Adjust the delay */
+}
+
+.category-dropdown select {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.reset-button {
+  margin-top: auto;
+}
+
+/* Media query for responsive layout on smaller screens */
+@media (max-width: 768px) {
+  .game-container {
+    flex-direction: column;
+  }
+
+  .test-card,
+  .score-column {
+    margin: 0;
+  }
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
